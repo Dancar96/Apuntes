@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de usuarios</title>
+</head>
+<body>
+    <h1>Lista de usuarios</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo electrónico</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.correo_electronico }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h2>Agregar nuevo usuario</h2>
+    <form method="POST" action="/agregar">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="correo_electronico">Correo electrónico:</label>
+        <input type="email" id="correo_electronico" name="correo_electronico" required><br><br>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>
